@@ -111,14 +111,16 @@ switch (qsField) {
 }
 
 
-  const tableOut = '<html><body><table>'
-    + '<tr>'
-      + '<th>line1</td>'
-      + '<th>line2</td>'
-      + '<th>city</td>'
-      + '<th>state</td>'
-      + '<th>zip</td>'
-    + '</tr>'
+  const tableOut = '<html><head><link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">'
+  +'<body>'
+  +'<table class="pure-table">'
+    + '<thead><tr>'
+      + '<th>Line 1</td>'
+      + '<th>Line 2</td>'
+      + '<th>City</td>'
+      + '<th>State</td>'
+      + '<th>Zip</td>'
+    + '</tr></thead><tbody>'
     + listAddresses.map(function (address: any) {
   	return '<tr>'
   	  + '<td>' + address.line1 + '</td>'
@@ -127,7 +129,8 @@ switch (qsField) {
       + '<td>' + address.state + '</td>'
       + '<td>' + address.zip + '</td>'
       + '</tr>';
-  }).join('');
+  }).join('')
+  +'</tbody></table></body></html>';
 
 
 
